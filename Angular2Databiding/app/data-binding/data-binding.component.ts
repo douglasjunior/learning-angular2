@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 
 import { InputPropertyComponent } from './input-property.component'
 import { OutputPropertyComponent } from './output-property.component'
-import { LifeCycleComponent } from './../ciclo/life-cycle.component'
 
 @Component({
     moduleId: module.id,
     selector: 'exemplo-data-binding',
     templateUrl: 'data-binding.component.html',
-    styleUrls: ['data-binding.component.css'],
-    directives: [InputPropertyComponent, OutputPropertyComponent, LifeCycleComponent]
+    styleUrls: ['data-binding.component.css']
 })
 export class DataBindingComponent {
     constructor() { 
@@ -27,9 +25,6 @@ export class DataBindingComponent {
     nome = "";
 
     nomeCurso = "Angular JS 2!!";
-
-    valorInicial = 10;
-    deletarConteudo = false;
 
     onClick() {
         alert('Botão clicado!');
