@@ -1,0 +1,121 @@
+<section class="lifecycle-properties">
+    <article>
+        <h3>Ciclo de vida properties</h3>
+        
+        <lifecycle [valorInicial]="valorInicial" *ngIf="deletarConteudo != true"></lifecycle>
+        <button (click)="valorInicial = 20">Mudar valor</button> <br />
+        <button (click)="deletarConteudo = true">Deletar</button>
+    </article>
+</section>
+
+<section class="output-properties">
+    <article>
+        <h3>Output properties</h3>
+        
+        <contador valor="10" (mudouValor)="valorMudou($event)"></contador>
+    </article>
+</section>
+
+<section class="input-properties">
+    <article>
+        <h3>Input properties</h3>
+        
+        <curso [nome]="nomeCurso"></curso>
+    </article>
+</section>
+
+<section class="two-way-binding">
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <input type="text" 
+                [(ngModel)]="nome" />
+            <br />
+            <p>Você digitou {{ nome }}</p>
+        </div>
+    </article>
+</section>
+
+<section class="event-binding">
+    <article>
+        <h3>Event binding</h3>
+        <div>
+            <button (click)="onClick()" >Me clique</button>
+            
+            <br /><br />
+
+            <input #campo type="text" 
+                (keyup)="onKeyup($event)"
+                (keyup.enter)="onSave(campo.value)"
+                (blur)="onSave(campo.value)" />
+            <div>
+                Conteúdo atual: {{conteudoAtual}}
+            </div>
+            <div>
+                 Conteúdo salvo: {{conteudoSalvo}}
+            </div>
+            <br />
+            <span (mouseover)="onMouseOver()" 
+                  (mouseout)="onMouseOut()"
+                  [class.highlight]="isMouseOver" >
+                  Passe o mouse sobre mim!
+            </span>
+        </div>
+    </article>
+</section>
+
+<section class="property-biding">
+
+    <article>
+        <h3>Class e Style binding</h3>
+        <div>
+            Selecione uma classe:
+            <select #classe (change)="0" >
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Atenção</option>
+                <option value="alert-danger">Erro</option>               
+            </select>
+            <br />
+            <div class="alert {{classe.value}}" role="alert" >
+               Texto selecionado
+            </div>
+            <div class="alert" role="alert" 
+                [class.alert-success]="classe.value == 'alert-success'">
+                Sucesso
+            </div>
+            <div class="alert" role="alert"
+                [class.alert-info]="classe.value == 'alert-info'">
+                Info
+            </div>
+            <div class="alert" role="alert"
+                [class.alert-warning]="classe.value == 'alert-warning'">
+                Atenção
+            </div>
+            <div class="alert" role="alert" 
+                [class.alert-danger]="classe.value == 'alert-danger'">
+                Erro
+            </div>
+        </div>
+
+        <div class="alert alert-danger" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'" >
+            Este texto só aparece em caso de erro.
+        </div>
+    </article>
+
+    <article>
+        <h3>Interpolação</h3>
+        <p>String renderizada com interpolação {{ url }} </p>
+    </article>
+
+    <article>
+        <h3>Bind de propriedades</h3>
+        <img src="{{urlImg}}" />
+        <img [src]="urlImg" />
+        <img bind-src="urlImg" />
+    </article>
+
+
+
+</section>
+
