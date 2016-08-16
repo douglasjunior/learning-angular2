@@ -1,0 +1,9 @@
+<h1>Angular 2 - Filter</h1>
+
+<p>Caixa alta: {{ texto | uppercase }}</p>
+<p>Caixa baixa: {{ texto | lowercase }}</p>
+<p>Valor: {{ valor | currency: 'BRL': true }}</p>
+<p>Data: {{ dataAtual | date: 'dd/MM/yyyy HH:mm:ss' }}</p>
+<p>Data dinâmica: {{ dataAtual | date: formatar }}</p>
+<button (click)="mudarFormato()" >Mudar formato</button>
+<p>Cep: {{ cepExemplo | cep }}</p>
