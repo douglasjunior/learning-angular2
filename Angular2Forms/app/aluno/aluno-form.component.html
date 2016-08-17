@@ -1,0 +1,63 @@
+<div class="jumbotron">
+	
+  <h1 class="text-center">Angular 2 - Formulário</h1>
+
+	<hr />
+
+	<div class="alert alert-success" role="alert" *ngIf="sucesso">
+		Formulário enviado com sucesso!
+		<br />
+		{{ debug() }}
+	</div>
+
+	<div *ngIf="hasErrors()" class="alert alert-danger">
+		<ul>
+	    	<li *ngIf="validadeNomeIsRequired()">
+	    		Digite um nome
+	    	</li>
+	    	<li *ngIf="validadeEmailIsRequired()">
+	    		Digite um email
+	    	</li>
+	    	<li *ngIf="validadeEmailIsValid()">
+	    		Email inválido
+	    	</li>
+	    	<li *ngIf="validadeCursoIsRequired()">
+	    		Selecione um curso
+	    	</li>
+	    </ul>
+    </div>
+
+	<form (ngSubmit)='enviar()' *ngIf="!sucesso" [ngFormModel]="alunoForm" >
+		<div class="form-group" 
+			 [class.has-error]="validadeNomeIsRequired()">
+			<label class="control-label" for="nome">Nome</label>
+			<input type="text" class="form-control" name="nome" 
+				id="nome" [(ngModel)]="aluno.nome" ngControl="nome" >
+		</div>
+		<div class="form-group" 
+		     [class.has-error]="validadeEmailIsRequired() || validadeEmailIsValid()">
+			<label class="control-label" for="email">Email</label>
+			<input type="text" class="form-control" name="email" 
+				id="email" [(ngModel)]="aluno.email" ngControl="email">
+		</div>
+		<div class="form-group">
+			<label class="control-label" for="idade">Idade</label>
+			<input type="number" class="form-control" name="idade" 
+				id="idade" [(ngModel)]="aluno.idade">
+		</div>
+		<div class="form-group"
+			 [class.has-error]="validadeCursoIsRequired()">
+			<label class="control-label" for="curso">Curso</label>
+			<select name="curso" id="curso" class="form-control" [(ngModel)]="aluno.curso" ngControl="curso">
+				<option value="" selected>Selecione</option>
+				<option *ngFor="let curso of cursos; let i = index" [value]="curso.codigo">{{curso.nome}}</option>
+			</select>
+		</div>
+		<hr />
+		<div class="form-group text-center">
+			<button type="submit" class="btn btn-primary"
+				[disabled]="!alunoForm.valid">Enviar</button>
+		</div>
+	</form>
+
+</div>
