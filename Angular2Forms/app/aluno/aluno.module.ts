@@ -1,13 +1,13 @@
 import { NgModule }      from '@angular/core';
-import { CommonModule, FormBuilder, FORM_DIRECTIVES } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 
 import { AlunoFormComponent }  from './aluno-form.component';
 
 @NgModule({
   imports: [ CommonModule, FormsModule ],
-  declarations: [ AlunoFormComponent, FORM_DIRECTIVES ],
+  declarations: [ AlunoFormComponent ],
   exports: [ AlunoFormComponent ],
-  providers: [ FormBuilder ]
+  providers: [  ]
 })
 export class AlunoModule { }
