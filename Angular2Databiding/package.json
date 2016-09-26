@@ -2,6 +2,10 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "docker-build": "docker build -t ng2-quickstart .",
@@ -17,48 +21,48 @@
     "typings": "typings",
     "webdriver:update": "webdriver-manager update"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+
   "dependencies": {
-    "@angular/common": "2.0.0-rc.5",
-    "@angular/compiler": "2.0.0-rc.5",
-    "@angular/core": "2.0.0-rc.5",
-    "@angular/forms": "0.3.0",
-    "@angular/http": "2.0.0-rc.5",
-    "@angular/platform-browser": "2.0.0-rc.5",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
-    "@angular/router": "3.0.0-rc.1",
-    "@angular/router-deprecated":  "2.0.0-rc.2",
-    "@angular/upgrade": "2.0.0-rc.5",
+    "@angular/common":  "2.0.0",
+    "@angular/compiler":  "2.0.0",
+    "@angular/core":  "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http":  "2.0.0",
+    "@angular/platform-browser":  "2.0.0",
+    "@angular/platform-browser-dynamic":  "2.0.0",
+    "@angular/router":  "3.0.0",
+    "@angular/upgrade":  "2.0.0",
 
-    "systemjs": "0.19.36",
-    "core-js": "^2.4.0",
+    "systemjs": "0.19.38",
+    "core-js": "^2.4.1",
     "reflect-metadata": "^0.1.3",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "^0.6.12",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.23",
 
-    "angular2-in-memory-web-api": "0.0.15",
+    "angular-in-memory-web-api": "~0.1.0",
     "bootstrap": "^3.3.6"
   },
+  
   "devDependencies": {
-    "concurrently": "^2.0.0",
-    "lite-server": "^2.2.0",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.4",
+    "concurrently": "^2.2.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0",
 
     "canonical-path": "0.0.2",
     "http-server": "^0.9.0",
-    "tslint": "^3.7.4",
-    "lodash": "^4.11.1",
-    "jasmine-core": "~2.4.1",
-    "karma": "^1.2.0",
-    "karma-chrome-launcher": "^1.0.1",
+    "tslint": "^3.15.1",
+    "lodash": "^4.16.1",
+    "jasmine-core": "~2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
     "karma-htmlfile-reporter": "^0.3.4",
     "karma-jasmine": "^1.0.2",
-    "protractor": "^4.0.3",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "^3.3.0",
     "rimraf": "^2.5.2"
   },
+  
   "repository": {}
 }
